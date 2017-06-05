@@ -128,7 +128,7 @@ p {
 /* JUMBOTRON */
 
 .jumbotron {
-    background: url('/img/jumbotron-bg.png') bottom center no-repeat;
+    background: url('img/jumbotron-bg.png') bottom center no-repeat;
     background-size: cover;
     min-height: 745px;
     position: relative;
@@ -195,13 +195,13 @@ p {
 .join {
     background: $light-gray;
     @media (max-width: 1200px) {
-        background: url('/img/phone-on-hand.png') left no-repeat;
+        background: url('img/phone-on-hand.png') left no-repeat;
         background-size: cover;
     }
     .container {
         min-height: 495px;
         @media (min-width: 1201px) {
-            background: url('/img/phone-on-hand.png') center no-repeat;
+            background: url('img/phone-on-hand.png') center no-repeat;
             background-size: cover;
         }
         @media #{$phone} {

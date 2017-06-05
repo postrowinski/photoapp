@@ -3,10 +3,6 @@
   font-family: "GothamRounded";
   src: url("fonts/GothamRoundedMedium_21022.ttf"); }
 
-@font-face {
-  font-family: "GothamRoundedBook";
-  src: url("fonts/GothamRoundedBook_21018.ttf"); }
-
 /* VARIABLES */
 /* MIXIN */
 /* MEDIA QUERY*/
@@ -91,7 +87,7 @@ p {
 
 /* JUMBOTRON */
 .jumbotron {
-  background: url("/img/jumbotron-bg.png") bottom center no-repeat;
+  background: url("img/jumbotron-bg.png") bottom center no-repeat;
   background-size: cover;
   min-height: 745px;
   position: relative;
@@ -146,13 +142,13 @@ p {
   background: #f5f6f7; }
   @media (max-width: 1200px) {
     .join {
-      background: url("/img/phone-on-hand.png") left no-repeat;
+      background: url("img/phone-on-hand.png") left no-repeat;
       background-size: cover; } }
   .join .container {
     min-height: 495px; }
     @media (min-width: 1201px) {
       .join .container {
-        background: url("/img/phone-on-hand.png") center no-repeat;
+        background: url("img/phone-on-hand.png") center no-repeat;
         background-size: cover; } }
     @media (max-width: 768px) {
       .join .container {
