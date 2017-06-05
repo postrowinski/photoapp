@@ -1,0 +1,319 @@
+/* FONTS */
+
+@font-face {
+    font-family: "GothamRounded";
+    src: url('fonts/GothamRoundedMedium_21022.ttf');
+}
+
+@font-face {
+    font-family: "GothamRoundedBook";
+    src: url('fonts/GothamRoundedBook_21018.ttf');
+}
+
+
+/* VARIABLES */
+
+$main-green: #009c85;
+$light-gray: #f5f6f7;
+
+/* MIXIN */
+
+@mixin transform($trans) {
+    -webkit-transform: $trans;
+    -ms-transform: $trans;
+    transform: $trans;
+}
+
+@mixin middle-align {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+}
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+
+/* MEDIA QUERY*/
+
+$desktop: "(max-width: 1200px)";
+$laptop: "(max-width: 991px)";
+$phone: "(max-width: 768px)";
+$vertical-phone: "(max-width: 475px)";
+
+/* GENERAL */
+
+body {
+    font-family: "GothamRounded";
+}
+
+a {
+    color: #fff;
+    &:focus {
+        color: #fff;
+    }
+}
+
+h2 {
+    color: $main-green;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #989899;
+    line-height: 24px;
+    span {
+        color: #000;
+    }
+}
+
+.btn {
+    padding: 0 30px;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 700;
+    line-height: 45px;
+    text-transform: uppercase;
+    font-size: 12px;
+    background: $main-green;
+    @include transition(0.5s);
+    &:hover {
+        background: #fff;
+        color: $main-green;
+        border-color: $main-green;
+        @include transform(scale(1.2));
+    }
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.prepare-for-absolute {
+    position: relative;
+}
+/* NAV */
+
+.navbar {
+    padding-top: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    @media #{$phone} {
+        padding-top: 5px;
+    }
+    .nav-links {
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 700;
+        @include transition(0.4s);
+        &:hover {
+            background: transparent;
+            color: $main-green;
+            @include transform(scale(1.15));
+        }
+        &:focus {
+            background: transparent;
+            @include transform(scale(1.15));
+            color: #005c4e;
+        }
+    }
+}
+
+
+/* JUMBOTRON */
+
+.jumbotron {
+    background: url('/img/jumbotron-bg.png') bottom center no-repeat;
+    background-size: cover;
+    min-height: 745px;
+    position: relative;
+    margin: 0 auto;
+    color: #fff;
+    .motto {
+        @include middle-align;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    h1 {
+        font-weight: 400;
+        font-size: 36px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        @media #{$phone} {
+            padding-top: 100px;
+            font-size: 28px;
+        }
+    }
+    p {
+        color: #fff;
+        font-size: 16px;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+    }
+    .social-links {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        a {
+            margin-right: 10px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+    .fa {
+        font-size: 26px;
+        @include transition(0.4s);
+    }
+    .fa-twitter {
+        &:hover {
+            color: #55ACEE;
+        }
+    }
+    .fa-flickr {
+        &:hover {
+            color: #ff0084;
+        }
+    }
+    .fa-dribbble {
+        &:hover {
+            color: #ea4c89;
+        }
+    }
+}
+
+
+/* JOIN */
+
+.join {
+    background: $light-gray;
+    @media (max-width: 1200px) {
+        background: url('/img/phone-on-hand.png') left no-repeat;
+        background-size: cover;
+    }
+    .container {
+        min-height: 495px;
+        @media (min-width: 1201px) {
+            background: url('/img/phone-on-hand.png') center no-repeat;
+            background-size: cover;
+        }
+        @media #{$phone} {
+            text-align: center;
+        }
+    }
+    h2 {
+        margin: 100px 0 40px;
+    }
+    .btn {
+        margin-top: 25px;
+        line-height: 55px;
+    }
+}
+
+/* DESIGN */
+.design {
+    @media #{$phone} {
+        padding-bottom: 35px;
+    }
+    .container {
+        padding-top: 120px;
+        @media #{$phone} {
+            padding-top: 40px;
+            text-align: center;
+        }
+    }
+    .green-phone {
+        overflow: hidden;
+        max-height: 400px;
+        @media #{$phone} {
+            max-height: 250px;
+        }
+        @media #{$vertical-phone} {
+            display: none;
+        }
+    }
+    h2 {
+        margin-bottom: 40px;
+    }
+    .btn {
+        margin-top: 35px;
+        border-radius: 0;
+    }
+}
+
+/* COMMUNITY */
+.comminity {
+    background: $light-gray;
+    .container {
+        background: $light-gray;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        @media #{$phone} {
+           padding-top: 30px;
+           padding-bottom: 60px; 
+        }
+    }
+    
+    [class*="col"] {
+        min-height: 244px;
+    }
+    .community-info {
+        padding-top: 25px;
+    }
+    img {
+        margin: auto;
+    }
+    p {
+        max-width: 150px;
+        margin: auto;
+    }
+}
+/* SUBSCRIBE */
+.subscribe {   
+    background: url('img/subscribe-bg.png') center center no-repeat;
+    background-size: cover;
+    .container {
+        min-height: 650px;
+        @media #{$phone} {
+            min-height: 100vh;
+        }
+    }
+    .sub-middle {
+        @include middle-align;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    h2 {
+        font-size: 24px;
+        color: #fff;
+    }
+    input {
+        height: 60px;
+        width: 280px;
+        font-size: 16px;
+        padding: 10px 20px;
+        text-transform: uppercase;
+    }
+    .btn {
+        border-radius: 0;
+        height: 60px;
+        margin: -2px 0 0 -5px;
+        &:hover {
+            @include transform(scale(1));
+        }
+    }
+}
