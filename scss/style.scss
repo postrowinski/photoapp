@@ -5,12 +5,6 @@
     src: url('fonts/GothamRoundedMedium_21022.ttf');
 }
 
-@font-face {
-    font-family: "GothamRoundedBook";
-    src: url('fonts/GothamRoundedBook_21018.ttf');
-}
-
-
 /* VARIABLES */
 
 $main-green: #009c85;
@@ -99,6 +93,8 @@ p {
 .prepare-for-absolute {
     position: relative;
 }
+
+
 /* NAV */
 
 .navbar {
@@ -128,7 +124,6 @@ p {
         }
     }
 }
-
 
 /* JUMBOTRON */
 
@@ -195,7 +190,6 @@ p {
     }
 }
 
-
 /* JOIN */
 
 .join {
@@ -224,6 +218,7 @@ p {
 }
 
 /* DESIGN */
+
 .design {
     @media #{$phone} {
         padding-bottom: 35px;
@@ -254,7 +249,9 @@ p {
     }
 }
 
+
 /* COMMUNITY */
+
 .comminity {
     background: $light-gray;
     .container {
@@ -262,11 +259,10 @@ p {
         padding-top: 120px;
         padding-bottom: 120px;
         @media #{$phone} {
-           padding-top: 30px;
-           padding-bottom: 60px; 
+            padding-top: 30px;
+            padding-bottom: 60px;
         }
     }
-    
     [class*="col"] {
         min-height: 244px;
     }
@@ -281,8 +277,11 @@ p {
         margin: auto;
     }
 }
+
+
 /* SUBSCRIBE */
-.subscribe {   
+
+.subscribe {
     background: url('img/subscribe-bg.png') center center no-repeat;
     background-size: cover;
     .container {
@@ -300,20 +299,156 @@ p {
     h2 {
         font-size: 24px;
         color: #fff;
+        margin-bottom: 35px;
     }
     input {
         height: 60px;
         width: 280px;
+        letter-spacing: 2px;
         font-size: 16px;
         padding: 10px 20px;
         text-transform: uppercase;
+        border-radius: 3px 0 0 3px;
+        border-color: transparent;
+        @media #{$vertical-phone} {
+            width: 200px;
+        }
     }
     .btn {
-        border-radius: 0;
+        border-radius: 0 3px 3px 0;
+        padding: 0 20px;
         height: 60px;
         margin: -2px 0 0 -5px;
         &:hover {
             @include transform(scale(1));
+        }
+        .fa {
+            font-size: 24px;
+            line-height: 58px;
+        }
+    }
+}
+
+
+/* DOWNLOAD */
+
+.download {
+    background: #f5f6f7;
+    .container {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+    h2 {
+        letter-spacing: 3px;
+        font-weight: 700;
+        font-size: 20px;
+        color: #373737;
+    }
+    p {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #373737;
+        letter-spacing: 2px;
+    }   
+    @media #{$phone} {
+        .text-right,
+        .text-left {
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+    .btn-panel {
+        margin-top: 30px;
+    }
+    .btn {
+        padding: 0;
+        box-sizing: border-box;
+        &:hover {
+            @include transform(scale(1));
+            color: #fff;
+        }
+    }
+    .btn-store {
+        height: 60px;
+        background: $main-green;
+        box-sizing: border-box;
+        background: #00bc9a;
+        span {
+            display: inline-block;
+            position: relative;
+            top: -5px;
+            padding: 0 20px;
+            letter-spacing: 2px;
+            text-align: left;
+            font-size: 16px;
+            width: 240px;
+            line-height: 60px;
+            @media #{$vertical-phone} {
+                width: 160px;
+            }
+        }
+        .fa {
+            position: relative;
+            border-radius: 0 3px 3px 0;
+            top: -1px;
+            width: 60px;
+            line-height: 60px;
+            font-size: 30px;
+            background: #009c85;
+        }
+    }
+}
+
+
+/* FOOTER */
+
+footer {
+    .container {
+        padding: 30px 15px;
+        @media #{$phone} {
+            text-align: center;
+        }
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            min-width: 90px;
+            &:last-of-type a:after {
+                        background: transparent;
+            }
+        }
+    }
+    a {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #000;
+        position: relative;
+        font-weight: 700;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 12px;
+            background: $main-green;
+            right: -9px;
+            top: 2px;
+        }
+    }
+    p {
+        margin-top: 15px;
+        color: #000;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+    .text-right {
+        @media #{$phone} {
+            margin-top: 15px;
+            text-align: center;
         }
     }
 }
