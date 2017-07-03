@@ -125,6 +125,22 @@ p {
     }
 }
 
+.arrow-scroll-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 35px;
+    height: 35px;
+    border-radius: 3px;
+    background: #009C85;
+    cursor: pointer;
+    .fa {
+        color: #fff;
+        line-height: 35px;
+        font-size: 20px;
+    }
+}
+
 /* JUMBOTRON */
 
 .jumbotron {
